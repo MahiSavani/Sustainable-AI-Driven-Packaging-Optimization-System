@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoPackAI - Sustainable Packaging Optimization</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M20 5L35 12.5V27.5L20 35L5 27.5V12.5L20 5Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <circle cx="20" cy="20" r="6" fill="currentColor"/>
+                </svg>
+                <span class="logo-text">EcoPackAI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#optimizer" class="nav-link">Optimizer</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#impact" class="nav-link">Impact</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <button class="cta-btn">Get Started</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="badge">AI-Powered • Sustainable • Intelligent</span>
+                <h1 class="hero-title">
+                    Design Packaging That
+                    <span class="gradient-text">Saves The Planet</span>
+                </h1>
+                <p class="hero-description">
+                    Revolutionary AI-driven platform that optimizes packaging design, 
+                    minimizes waste, and reduces carbon footprint—all while cutting costs by up to 40%.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">78%</div>
+                        <div class="stat-label">Material Reduction</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">65%</div>
+                        <div class="stat-label">Cost Savings</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">92%</div>
+                        <div class="stat-label">Carbon Cut</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="scrollToOptimizer()">
+                        <span>Start Optimizing</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <button class="btn-secondary">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 0L13 7H20L14.5 11.5L17 20L10 15L3 20L5.5 11.5L0 7H7L10 0Z"/>
+                        </svg>
+                        <span>Watch Demo</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">📦</div>
+                    <div class="card-text">Smart Dimensions</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">🌱</div>
+                    <div class="card-text">Eco Materials</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">💰</div>
+                    <div class="card-text">Cost Optimized</div>
+                </div>
+                <div class="hero-box"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-text">Scroll to explore</div>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <span class="section-tag">Core Capabilities</span>
+            <h2 class="section-title">AI-Powered Features</h2>
+            <p class="section-description">
+                Advanced machine learning algorithms working together to create the perfect sustainable packaging solution
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2"/>
+                        <path d="M16 24H32M24 16V32" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Dimension Optimization</h3>
+                <p class="feature-description">
+                    Linear regression algorithms calculate optimal box dimensions based on product specifications, 
+                    minimizing empty space and material usage.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">Linear Regression</span>
+                    <span class="tech-tag">Python</span>
+                </div>
+            </div>
+
+            <div class="feature-card featured">
+                <div class="feature-badge">Most Accurate</div>
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M24 4L44 24L24 44L4 24L24 4Z" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="24" cy="24" r="8" fill="currentColor"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Structural Strength Prediction</h3>
+                <p class="feature-description">
+                    Random Forest ML models predict structural integrity and deformation risks, 
+                    ensuring product safety while optimizing material thickness.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">Random Forest</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+                        <path d="M24 14V24L30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Material Intelligence</h3>
+                <p class="feature-description">
+                    Hybrid rule-based ML recommends the most sustainable materials based on product category, 
+                    weight, fragility, and environmental impact.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">Hybrid ML</span>
+                    <span class="tech-tag">Rule Engine</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <rect x="6" y="12" width="36" height="24" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 12V6H36V12M12 36V42H36V36" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">2D Dieline Generation</h3>
+                <p class="feature-description">
+                    Automatic generation of precise 2D flat layouts ready for manufacturing, 
+                    with fold lines, cut paths, and assembly guides.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">Konva.js</span>
+                    <span class="tech-tag">CAD Export</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M24 8L40 18V30L24 40L8 30V18L24 8Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M24 8V40M8 18L40 30M40 18L8 30" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">3D Visualization</h3>
+                <p class="feature-description">
+                    Interactive 3D models with realistic folding animations powered by Three.js, 
+                    allowing you to preview the final package before production.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">Three.js</span>
+                    <span class="tech-tag">WebGL</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                        <path d="M12 36L24 12L36 36H12Z" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="24" cy="28" r="2" fill="currentColor"/>
+                        <path d="M24 20V24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Sustainability Reports</h3>
+                <p class="feature-description">
+                    Comprehensive carbon footprint analysis, material savings calculations, 
+                    and environmental impact metrics for every design.
+                </p>
+                <div class="feature-tech">
+                    <span class="tech-tag">Analytics</span>
+                    <span class="tech-tag">Reporting</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optimizer Section -->
+    <section id="optimizer" class="optimizer">
+        <div class="optimizer-header">
+            <h2 class="section-title">Packaging Optimizer</h2>
+            <p class="section-description">Enter your product details to generate an optimized, sustainable packaging solution</p>
+        </div>
+
+        <div class="optimizer-container">
+            <div class="optimizer-input">
+                <form id="optimizerForm" class="input-form">
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" id="productName" placeholder="e.g., Wireless Headphones" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="length">Length (cm)</label>
+                            <input type="number" id="length" placeholder="20" step="0.1" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="width">Width (cm)</label>
+                            <input type="number" id="width" placeholder="15" step="0.1" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" id="height" placeholder="8" step="0.1" min="0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" placeholder="0.5" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="">Select Category</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="food">Food & Beverages</option>
+                                <option value="cosmetics">Cosmetics</option>
+                                <option value="apparel">Apparel</option>
+                                <option value="books">Books & Media</option>
+                                <option value="toys">Toys & Games</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fragility">Fragility Level</label>
+                        <div class="slider-container">
+                            <input type="range" id="fragility" min="1" max="5" value="3" step="1">
+                            <div class="slider-labels">
+                                <span>Low</span>
+                                <span>Medium</span>
+                                <span>High</span>
+                            </div>
+                            <div class="slider-value" id="fragilityValue">Medium</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="stackable">
+                            <span class="checkbox-custom"></span>
+                            <span>Stackable packaging</span>
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="recyclable" checked>
+                            <span class="checkbox-custom"></span>
+                            <span>Prioritize recyclable materials</span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-optimize">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M10 2L18 10L10 18L2 10L10 2Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>Generate Optimal Design</span>
+                    </button>
+                </form>
+            </div>
+
+            <div class="optimizer-output" id="optimizerOutput">
+                <div class="output-placeholder">
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+                        <path d="M60 20L100 40V80L60 100L20 80V40L60 20Z" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+                        <circle cx="60" cy="60" r="15" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <p>Your optimized packaging design will appear here</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="impact">
+        <div class="impact-content">
+            <div class="impact-text">
+                <span class="section-tag">Environmental Impact</span>
+                <h2 class="section-title">Making a Real Difference</h2>
+                <p class="impact-description">
+                    Our AI-driven approach to packaging optimization has helped companies reduce waste, 
+                    lower emissions, and save millions while protecting the planet.
+                </p>
+
+                <div class="impact-metrics">
+                    <div class="metric">
+                        <div class="metric-icon">🌍</div>
+                        <div class="metric-info">
+                            <div class="metric-number" data-target="2400">0</div>
+                            <div class="metric-label">Tons CO₂ Saved</div>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-icon">♻️</div>
+                        <div class="metric-info">
+                            <div class="metric-number" data-target="89">0</div>
+                            <div class="metric-label">% Material Recycled</div>
+                        </div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-icon">📦</div>
+                        <div class="metric-info">
+                            <div class="metric-number" data-target="15000">0</div>
+                            <div class="metric-label">Packages Optimized</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact-applications">
+                    <h3>Perfect For</h3>
+                    <div class="application-tags">
+                        <span class="app-tag">E-Commerce</span>
+                        <span class="app-tag">Manufacturing</span>
+                        <span class="app-tag">Logistics</span>
+                        <span class="app-tag">Retail</span>
+                        <span class="app-tag">Sustainable Startups</span>
+                        <span class="app-tag">Education</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="impact-visual">
+                <div class="comparison-card">
+                    <div class="comparison-side traditional">
+                        <div class="comparison-label">Traditional</div>
+                        <div class="comparison-box large">
+                            <div class="product-inside small"></div>
+                        </div>
+                        <div class="comparison-stats bad">
+                            <span>65% empty space</span>
+                            <span>High emissions</span>
+                        </div>
+                    </div>
+                    <div class="comparison-arrow">→</div>
+                    <div class="comparison-side optimized">
+                        <div class="comparison-label">EcoPackAI</div>
+                        <div class="comparison-box optimal">
+                            <div class="product-inside fit"></div>
+                        </div>
+                        <div class="comparison-stats good">
+                            <span>5% empty space</span>
+                            <span>Low emissions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="about" class="tech-stack">
+        <div class="section-header">
+            <span class="section-tag">Technology</span>
+            <h2 class="section-title">Built With Modern Tools</h2>
+        </div>
+
+        <div class="tech-grid">
+            <div class="tech-item">
+                <div class="tech-icon">⚛️</div>
+                <div class="tech-name">React.js</div>
+                <div class="tech-role">Frontend Framework</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🎨</div>
+                <div class="tech-name">Konva.js</div>
+                <div class="tech-role">2D Canvas</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🎮</div>
+                <div class="tech-name">Three.js</div>
+                <div class="tech-role">3D Graphics</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🐍</div>
+                <div class="tech-name">Python</div>
+                <div class="tech-role">Backend & AI</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">🔬</div>
+                <div class="tech-name">Scikit-learn</div>
+                <div class="tech-role">Machine Learning</div>
+            </div>
+            <div class="tech-item">
+                <div class="tech-icon">⚡</div>
+                <div class="tech-name">Flask</div>
+                <div class="tech-role">API Server</div>
+            </div>
+        </div>
+
+        <div class="project-info">
+            <div class="info-card">
+                <h3>Academic Excellence</h3>
+                <p>4th Semester AIML Project combining artificial intelligence, sustainability engineering, and web visualization</p>
+            </div>
+            <div class="info-card">
+                <h3>Explainable AI</h3>
+                <p>Focusing on transparent, practical machine learning models that engineers can trust and understand</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <path d="M20 5L35 12.5V27.5L20 35L5 27.5V12.5L20 5Z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="20" cy="20" r="6" fill="currentColor"/>
+                    </svg>
+                    <span class="logo-text">EcoPackAI</span>
+                </div>
+                <p class="footer-tagline">Sustainable packaging through intelligent design</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#optimizer">Optimizer</a>
+                    <a href="#impact">Impact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="#about">About</a>
+                    <a href="#">Team</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="#">Documentation</a>
+                    <a href="#">API</a>
+                    <a href="#">Research</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 EcoPackAI. AIML 4th Semester Academic Project.</p>
+            <div class="footer-social">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Research Paper</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
