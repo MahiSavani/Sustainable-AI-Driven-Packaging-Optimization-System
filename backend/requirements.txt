@@ -1,0 +1,78 @@
+# EcoPackAI Backend Requirements
+# Python 3.8+
+
+# Web Framework
+flask==2.3.3
+flask-cors==4.0.0
+
+# Machine Learning
+scikit-learn==1.3.2
+numpy==1.24.4
+pandas==2.0.3
+
+# Model Persistence
+joblib==1.3.2
+
+# Data Visualization (for development/training)
+matplotlib==3.7.3
+seaborn==0.12.2
+
+# API Documentation (optional)
+flask-swagger-ui==4.11.1
+
+# Environment Variables
+python-dotenv==1.0.0
+
+# Testing
+pytest==7.4.3
+pytest-flask==1.3.0
+
+# Data Validation
+cerberus==1.3.5
+
+# Date/Time
+python-dateutil==2.8.2
+
+# HTTP Requests (for external APIs if needed)
+requests==2.31.0
+
+# JSON handling
+simplejson==3.19.2
+
+# Production Server (optional, for deployment)
+gunicorn==21.2.0
+waitress==2.1.2
+
+# Logging
+colorlog==6.7.0
+
+# Performance
+cachetools==5.3.2
+
+# Database (if you want to use SQLite/PostgreSQL later)
+sqlalchemy==2.0.23
+
+# Excel file handling (for dataset imports)
+openpyxl==3.1.2
+xlrd==2.0.1
+
+# CSV handling improvements
+csv23==0.3.4
+
+# Mathematical operations
+scipy==1.10.1
+
+# Progress bars (for training)
+tqdm==4.66.1
+
+# Memory profiling (development)
+memory-profiler==0.61.0
+
+# Code quality (development)
+flake8==6.1.0
+black==23.11.0
+pylint==3.0.3
+
+# Security
+werkzeug==2.3.7
+cryptography==41.0.7
