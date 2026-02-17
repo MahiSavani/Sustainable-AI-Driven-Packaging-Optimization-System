@@ -1,0 +1,26 @@
+{
+  "training_date": "2026-02-17T17:44:49.995616",
+  "dataset_size": 5000,
+  "models": [
+    {
+      "name": "Dimension Predictor",
+      "file": "dimension_model.pkl",
+      "r2_score": 0.9826938703064961
+    },
+    {
+      "name": "Material Recommender",
+      "file": "material_model.pkl",
+      "accuracy": 1.0
+    },
+    {
+      "name": "Strength Predictor",
+      "file": "strength_model.pkl",
+      "r2_score": 0.9281564426262259
+    },
+    {
+      "name": "Sustainability Analyzer",
+      "file": "sustainability_model.pkl",
+      "r2_score": 0.366211305138533
+    }
+  ]
+}
