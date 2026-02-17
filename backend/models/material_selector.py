@@ -9,7 +9,7 @@ import numpy as np
 class MaterialSelector:
     """
     Hybrid rule-based ML system for material selection
-    
+
     Considers:
     - Product category
     - Weight
@@ -18,7 +18,7 @@ class MaterialSelector:
     - Cost constraints
     - Sustainability goals
     """
-    
+
     def __init__(self):
         # Comprehensive material database
         self.materials = {
@@ -142,7 +142,7 @@ class MaterialSelector:
                 }
             }
         }
-        
+
         # Category mapping
         self.category_priorities = {
             'electronics': {
@@ -181,38 +181,38 @@ class MaterialSelector:
                 'min_strength': 'Medium'
             }
         }
-    
-    
+
+
     def select(self, category, weight, fragility, recyclable_priority=True):
         """
         Select optimal material based on product characteristics
-        
+
         Args:
             category (str): Product category
             weight (float): Product weight in kg
             fragility (int): Fragility level (1-5)
             recyclable_priority (bool): Prioritize recyclable materials
-        
+
         Returns:
             dict: Selected material with all properties
         """
-        
+
         # Normalize category
         category = category.lower() if category else 'other'
-        
+
         # Get category preferences
         cat_prefs = self.category_priorities.get(
             category,
             self.category_priorities['other']
         )
-        
+
         # Score each material
         material_scores = {}
-        
+
         for material_key, material in self.materials.items():
             score = 0
             reasons = []
-            
+
             # 1. Weight compatibility (30 points)
             if weight <= material['weight_limit']:
                 weight_ratio = weight / material['weight_limit']
@@ -229,7 +229,7 @@ class MaterialSelector:
                 score += 0
                 reasons.append("Insufficient weight capacity")
                 continue  # Skip this material
-            
+
             # 2. Fragility handling (25 points)
             if fragility <= material['fragility_max']:
                 if fragility >= 4 and material['strength_rating'] in ['High', 'Very High']:
@@ -244,7 +244,7 @@ class MaterialSelector:
             else:
                 score += 5
                 reasons.append("May not provide sufficient protection")
-            
+
             # 3. Sustainability (20 points)
             sustainability_points = (material['sustainability_score'] / 100) * 20
             score += sustainability_points
@@ -252,7 +252,7 @@ class MaterialSelector:
                 reasons.append("Exceptional sustainability")
             elif material['sustainability_score'] >= 85:
                 reasons.append("High sustainability")
-            
+
             # 4. Category match (15 points)
             if material_key in cat_prefs['preferred_materials']:
                 score += 15
@@ -262,14 +262,14 @@ class MaterialSelector:
                 reasons.append(f"Suitable for {category} category")
             else:
                 score += 5
-            
+
             # 5. Recyclability (10 points)
             if recyclable_priority and material['recyclable']:
                 score += 10
                 reasons.append("Fully recyclable")
             elif material['recyclable']:
                 score += 7
-            
+
             # 6. Cost efficiency (10 points)
             if material['cost_factor'] <= 1.0:
                 score += 10
@@ -280,26 +280,26 @@ class MaterialSelector:
             else:
                 score += 4
                 reasons.append("Premium pricing")
-            
+
             material_scores[material_key] = {
                 'score': score,
                 'reasons': reasons,
                 'material': material
             }
-        
+
         # Select material with highest score
         best_material_key = max(material_scores, key=lambda k: material_scores[k]['score'])
         best_match = material_scores[best_material_key]
-        
+
         # Prepare response
         selected = best_match['material'].copy()
         selected['selection_score'] = best_match['score']
         selected['selection_reasons'] = best_match['reasons']
         selected['alternatives'] = self._get_alternatives(material_scores, best_material_key)
-        
+
         return selected
-    
-    
+
+
     def _get_alternatives(self, material_scores, selected_key, count=2):
         """Get alternative material recommendations"""
         # Sort by score
@@ -308,7 +308,7 @@ class MaterialSelector:
             key=lambda x: x[1]['score'],
             reverse=True
         )
-        
+
         # Get top alternatives (excluding selected)
         alternatives = []
         for material_key, data in sorted_materials:
@@ -320,10 +320,10 @@ class MaterialSelector:
                     'cost_factor': data['material']['cost_factor'],
                     'sustainability_score': data['material']['sustainability_score']
                 })
-        
+
         return alternatives
-    
-    
+
+
     def get_all_materials(self):
         """Get list of all available materials"""
         return [
@@ -340,12 +340,12 @@ class MaterialSelector:
             }
             for key, material in self.materials.items()
         ]
-    
-    
+
+
     def compare_materials(self, material_keys):
         """Compare multiple materials side by side"""
         comparison = []
-        
+
         for key in material_keys:
             if key in self.materials:
                 material = self.materials[key]
@@ -356,14 +356,14 @@ class MaterialSelector:
                     'cost': material['cost_factor'],
                     'co2_impact': material['environmental_impact']['co2_per_kg']
                 })
-        
+
         return comparison
-    
-    
+
+
     def get_material_by_budget(self, max_cost_factor):
         """Get materials within budget"""
         affordable = []
-        
+
         for key, material in self.materials.items():
             if material['cost_factor'] <= max_cost_factor:
                 affordable.append({
@@ -372,21 +372,21 @@ class MaterialSelector:
                     'sustainability_score': material['sustainability_score'],
                     'strength_rating': material['strength_rating']
                 })
-        
+
         # Sort by sustainability score
         affordable.sort(key=lambda x: x['sustainability_score'], reverse=True)
-        
+
         return affordable
-    
-    
+
+
     def calculate_environmental_impact(self, material_name, quantity_kg):
         """
         Calculate environmental impact for a given quantity
-        
+
         Args:
             material_name (str): Material name
             quantity_kg (float): Quantity in kilograms
-        
+
         Returns:
             dict: Environmental impact metrics
         """
@@ -396,12 +396,12 @@ class MaterialSelector:
             if mat['name'] == material_name:
                 material = mat
                 break
-        
+
         if not material:
             return None
-        
+
         env = material['environmental_impact']
-        
+
         return {
             'total_co2_kg': env['co2_per_kg'] * quantity_kg,
             'total_water_liters': env['water_usage_liters'] * quantity_kg,
@@ -416,10 +416,10 @@ if __name__ == "__main__":
     print("=" * 60)
     print("Testing Material Selector")
     print("=" * 60)
-    
+
     # Initialize selector
     selector = MaterialSelector()
-    
+
     # Test case 1: Electronics (fragile, medium weight)
     print("\nTest 1: Electronics - Smartphone")
     result1 = selector.select(
@@ -435,7 +435,7 @@ if __name__ == "__main__":
     print("Reasons:")
     for reason in result1['selection_reasons']:
         print(f"  - {reason}")
-    
+
     # Test case 2: Heavy item
     print("\nTest 2: Heavy Machinery Part")
     result2 = selector.select(
@@ -447,7 +447,7 @@ if __name__ == "__main__":
     print(f"Selected: {result2['name']}")
     print(f"Strength Rating: {result2['strength_rating']}")
     print(f"Cost Factor: {result2['cost_factor']}")
-    
+
     # Test case 3: Food packaging
     print("\nTest 3: Food Product")
     result3 = selector.select(
@@ -461,7 +461,7 @@ if __name__ == "__main__":
     print("\nAlternatives:")
     for alt in result3['alternatives']:
         print(f"  - {alt['name']} (Score: {alt['score']:.1f})")
-    
+
     # Test environmental impact
     print("\nTest 4: Environmental Impact (1000 units)")
     impact = selector.calculate_environmental_impact(
@@ -472,13 +472,13 @@ if __name__ == "__main__":
         print(f"CO₂ Emissions: {impact['total_co2_kg']:.2f} kg")
         print(f"Water Usage: {impact['total_water_liters']:.0f} liters")
         print(f"Energy Consumption: {impact['total_energy_kwh']:.1f} kWh")
-    
+
     # Test budget filtering
     print("\nTest 5: Budget-Friendly Materials (≤1.0 cost factor)")
     affordable = selector.get_material_by_budget(max_cost_factor=1.0)
     for material in affordable:
         print(f"  - {material['name']} (${material['cost_factor']}, Sustainability: {material['sustainability_score']})")
-    
+
     print("\n" + "=" * 60)
     print("✓ All tests completed successfully")
     print("=" * 60)
